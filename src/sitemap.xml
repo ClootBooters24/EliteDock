@@ -5,5 +5,35 @@
         <priority>1.00</priority>
     </url>
 
+    <url>
+        <loc>https://elitedock.com/about</loc>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://elitedock.com/contact</loc>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://elitedock.com/gallery</loc>
+        <priority>0.85</priority>
+    </url>
+
     <!-- Legal Pages -->
+
+    <url>
+        <loc>https://elitedock.com/privacy-policy</loc>
+        <priority>0.40</priority>
+    </url>
+
+    <url>
+        <loc>https://elitedock.com/terms-of-use</loc>
+        <priority>0.40</priority>
+    </url>
+
+    <url>
+        <loc>https://elitedock.com/accessibility</loc>
+        <priority>0.30</priority>
+    </url>
 </urlset>

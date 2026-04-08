@@ -1,0 +1,25 @@
+.legal-page {
+    padding-top: var(--header-height);
+}
+
+.legal-hero {
+    padding-bottom: 1rem;
+}
+
+.legal-shell {
+    max-width: 900px;
+}
+
+.legal-note {
+    color: var(--color-muted);
+}
+
+.legal-content h2 {
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.legal-content h2:first-child {
+    margin-top: 0;
+}

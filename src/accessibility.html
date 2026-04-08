@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement | Elite Dock</title>
+    <meta name="description" content="Accessibility statement for the Elite Dock website.">
+    <link rel="canonical" href="https://elitedock.com/accessibility">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/legal.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="shell header-inner">
+            <a class="brand" href="index.html" aria-label="Elite Dock home">
+                <span class="brand-mark" aria-hidden="true">ED</span>
+                <span class="brand-text">Elite Dock</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+                Menu
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="btn btn-nav">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="legal-page">
+        <section class="section legal-hero">
+            <div class="shell legal-shell">
+                <p class="eyebrow">Legal</p>
+                <h1>Accessibility Statement</h1>
+                <p>Last updated: April 7, 2026</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="shell legal-shell card legal-content">
+                <h2>Our Commitment</h2>
+                <p>Elite Dock is committed to making this website accessible to as many people as possible, regardless of technology or ability.</p>
+
+                <h2>Accessibility Features</h2>
+                <p>We aim to support keyboard navigation, semantic HTML structure, readable contrast, and responsive layouts across devices.</p>
+
+                <h2>Ongoing Improvements</h2>
+                <p>Accessibility is an ongoing process. We regularly review and improve content and code to reduce barriers.</p>
+
+                <h2>Feedback</h2>
+                <p>If you encounter accessibility issues, please contact us so we can assist and improve the site.</p>
+                <p>Email: <a href="mailto:info@elitedock.com">info@elitedock.com</a><br>Phone: <a href="tel:+19187860553">(918) 786-0553</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p>Copyright <span id="copyright-year"></span> Elite Dock. All rights reserved.</p>
+            <ul class="legal-links" aria-label="Legal links">
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-use.html">Terms of Use</a></li>
+                <li><a href="accessibility.html" aria-current="page">Accessibility</a></li>
+            </ul>
+            <p class="creator-note">
+                <a href="https://warstlerdigital.com" target="_blank" rel="noopener">Built by Warstler Digital Design</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

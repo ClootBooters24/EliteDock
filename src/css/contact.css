@@ -1,0 +1,36 @@
+.inner-page {
+    padding-top: var(--header-height);
+}
+
+.page-hero {
+    padding-bottom: 1.8rem;
+}
+
+.contact-layout {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-details {
+    height: fit-content;
+}
+
+.contact-note {
+    margin-top: 1rem;
+    color: var(--color-muted);
+}
+
+.contact-form select {
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-line);
+    padding: 0.7rem 0.8rem;
+    font: inherit;
+    background: #ffffff;
+}
+
+@media (min-width: 880px) {
+    .contact-layout {
+        grid-template-columns: 0.95fr 1.25fr;
+        align-items: start;
+    }
+}
