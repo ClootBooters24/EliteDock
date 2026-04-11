@@ -11,7 +11,7 @@
 }
 
 .legal-note {
-    color: var(--color-muted);
+    color: var(--accent-text);
 }
 
 .legal-content h2 {

@@ -1,19 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Geared+Slab:wght@400;700&family=Montserrat:wght@400;500;700&display=swap');
+
 :root {
 	--page-max-width: 1140px;
 	--section-space: clamp(3.5rem, 7vw, 6rem);
 	--header-height: 5rem;
 
-	/* Associate can replace these tokens with final visual system values. */
-	--color-text: #1a2430;
-	--color-bg: #f2f5f8;
-	--color-surface: #ffffff;
-	--color-line: #d5dee5;
-	--color-brand: #245f7a;
-	--color-brand-ink: #ffffff;
-	--color-muted: #5d6a75;
+	--bg-primary: #ffffff;
+	--primary-accent: #4B6F82;
+	--primary-text: #000000;
+	--accent-text: #365d67;
+	--secondary-accent: #66B5D3;
+	--line: #365d67;
 	--radius-sm: 0.5rem;
 	--radius-md: 0.9rem;
 	--shadow-card: 0 10px 30px rgba(20, 41, 56, 0.08);
+
+	/* Fonts */
+	--font-heading: 'Geared Slab', serif;
+	--font-body: 'Montserrat', sans-serif;
 }
 
 * {
@@ -26,9 +30,9 @@ html {
 
 body {
 	margin: 0;
-	color: var(--color-text);
-	background: var(--color-bg);
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	color: var(--primary-text);
+	background: var(--bg-primary);
+	font-family: var(--font-body);
 	line-height: 1.6;
 }
 
@@ -60,7 +64,7 @@ a {
 	font-size: 0.85rem;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: var(--color-muted);
+	color: var(--accent-text);
 	font-weight: 700;
 }
 
@@ -74,11 +78,20 @@ p {
 h1 {
 	line-height: 1.15;
 	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-family: var(--font-heading);
+	font-weight: 700;
 }
 
 h2 {
 	line-height: 1.2;
 	font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+	font-family: var(--font-heading);
+	font-weight: 700;
+}
+
+h3, h4, h5, h6 {
+	font-family: var(--font-body);
+	font-weight: 700;
 }
 
 .hero {
@@ -108,12 +121,12 @@ h2 {
 
 .media-placeholder {
 	min-height: 260px;
-	border: 1px dashed var(--color-line);
+	border: 1px dashed var(--line);
 	border-radius: var(--radius-md);
 	background: rgba(255, 255, 255, 0.55);
 	display: grid;
 	place-items: center;
-	color: var(--color-muted);
+	color: var(--accent-text);
 	text-align: center;
 	padding: 1rem;
 }
@@ -131,13 +144,13 @@ h2 {
 }
 
 .btn-primary {
-	background: var(--color-brand);
-	color: var(--color-brand-ink);
+	background: var(--primary-accent);
+	color: var(--bg-primary);
 }
 
 .btn-secondary {
 	background: transparent;
-	border-color: var(--color-line);
+	border-color: var(--line);
 }
 
 .card-grid {
@@ -146,8 +159,8 @@ h2 {
 }
 
 .card {
-	background: var(--color-surface);
-	border: 1px solid var(--color-line);
+	background: var(--surface);
+	border: 1px solid var(--line);
 	border-radius: var(--radius-md);
 	padding: 1.2rem;
 	box-shadow: var(--shadow-card);
@@ -157,7 +170,7 @@ h2 {
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	color: var(--color-muted);
+	color: var(--accent-text);
 }
 
 .process-steps {
@@ -188,7 +201,7 @@ h2 {
 
 .stat-label {
 	margin: 0;
-	color: var(--color-muted);
+	color: var(--accent-text);
 }
 
 .faq-list {
@@ -197,8 +210,8 @@ h2 {
 }
 
 .faq-item {
-	background: var(--color-surface);
-	border: 1px solid var(--color-line);
+	background: var(--surface);
+	border: 1px solid var(--line);
 	border-radius: var(--radius-sm);
 	padding: 0.9rem 1rem;
 }
@@ -225,7 +238,7 @@ h2 {
 .contact-form input,
 .contact-form textarea {
 	border-radius: var(--radius-sm);
-	border: 1px solid var(--color-line);
+	border: 1px solid var(--line);
 	padding: 0.7rem 0.8rem;
 	font: inherit;
 }
@@ -236,8 +249,8 @@ h2 {
 	top: -100%;
 	z-index: 1000;
 	padding: 0.55rem 0.75rem;
-	background: #0e1e2a;
-	color: #ffffff;
+	background: var(--primary-accent);
+	color: var(--surface-ink);
 	border-radius: var(--radius-sm);
 }
 

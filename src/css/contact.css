@@ -17,12 +17,12 @@
 
 .contact-note {
     margin-top: 1rem;
-    color: var(--color-muted);
+    color: var(--accent-text);
 }
 
 .contact-form select {
     border-radius: var(--radius-sm);
-    border: 1px solid var(--color-line);
+    border: 1px solid var(--line);
     padding: 0.7rem 0.8rem;
     font: inherit;
     background: #ffffff;

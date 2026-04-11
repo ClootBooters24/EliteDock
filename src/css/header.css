@@ -2,7 +2,7 @@
 	position: fixed;
 	inset: 0 0 auto;
 	z-index: 100;
-	background: rgba(242, 245, 248, 0.92);
+	background: var(--primary-accent);
 	border-bottom: 1px solid rgba(26, 36, 48, 0.08);
 	backdrop-filter: blur(8px);
 }
@@ -27,8 +27,8 @@
 	width: 2rem;
 	height: 2rem;
 	border-radius: 50%;
-	background: var(--color-brand);
-	color: var(--color-brand-ink);
+	background: var(--primary-accent);
+	color: var(--surface-ink);
 	display: grid;
 	place-items: center;
 	font-size: 0.78rem;
@@ -36,13 +36,15 @@
 
 .brand-text {
 	font-size: 1.05rem;
+	font-family: var(--font-heading);
+	font-weight: 700;
 }
 
 .menu-toggle {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid var(--color-line);
+	border: 1px solid var(--line);
 	border-radius: 999px;
 	background: transparent;
 	padding: 0.45rem 0.75rem;
@@ -55,8 +57,8 @@
 	top: calc(100% + 0.35rem);
 	right: 1rem;
 	left: 1rem;
-	background: var(--color-surface);
-	border: 1px solid var(--color-line);
+	background: var(--surface);
+	border: 1px solid var(--line);
 	border-radius: var(--radius-md);
 	box-shadow: var(--shadow-card);
 	padding: 0.5rem;
@@ -72,7 +74,9 @@
 	text-decoration: none;
 	padding: 0.55rem 0.7rem;
 	border-radius: var(--radius-sm);
-	color: var(--color-text);
+	color: var(--bg-primary);
+	font-family: var(--font-body);
+	font-weight: 500;
 }
 
 .site-nav a.active {
