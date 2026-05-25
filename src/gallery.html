@@ -30,6 +30,8 @@
                 <a href="/">Home</a>
                 <a href="/gallery" class="active" aria-current="page">Gallery</a>
                 <a href="/about">About</a>
+                <a href="/add-ons">Add-Ons</a>
+                <a href="/dock-maintenance-repair">Maintenance</a>
                 <a href="/contact" class="btn btn-nav">Contact</a>
             </nav>
         </div>
@@ -87,15 +89,23 @@
                 </div>
 
                 <div class="card tiktok-card">
-                    <p>Replace the iframe src below with your final TikTok embed URL for a specific video or profile feed.</p>
-                    <div class="tiktok-frame-wrap">
-                        <iframe
-                            title="Elite Dock TikTok video"
-                            src="https://www.tiktok.com/embed/v2/7480000000000000000"
-                            loading="lazy"
-                            allow="encrypted-media"
-                            allowfullscreen>
-                        </iframe>
+                    <div class="tiktok-copy">
+                        <p class="social-kicker">Follow Along</p>
+                        <h3>See New Dock Builds in Motion</h3>
+                        <p>Catch installs, upgrades, and project walk-throughs from the Elite Dock crew on TikTok.</p>
+                        <ul class="social-points" aria-label="TikTok content highlights">
+                            <li>Behind-the-scenes installs</li>
+                            <li>Before-and-after dock upgrades</li>
+                            <li>Quick walkthrough clips from the lake</li>
+                        </ul>
+                        <p><a class="btn btn-secondary" href="https://www.tiktok.com/@elitedock" target="_blank" rel="noopener noreferrer" aria-label="Visit Elite Dock on TikTok">Visit @elitedock</a></p>
+                    </div>
+                    <div class="tiktok-frame-wrap" aria-label="Elite Dock TikTok creator feed">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@elitedock" data-unique-id="elitedock" data-embed-type="creator">
+                            <section>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@elitedock?refer=creator_embed">@elitedock</a>
+                            </section>
+                        </blockquote>
                     </div>
                 </div>
             </div>
@@ -117,5 +127,6 @@
     </footer>
 
     <script src="js/index.js"></script>
+    <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>

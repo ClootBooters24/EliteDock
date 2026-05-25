@@ -1,0 +1,61 @@
+.inner-page {
+    padding-top: var(--header-height);
+}
+
+.service-page-hero {
+    padding-bottom: 1rem;
+}
+
+.service-shell {
+    max-width: 980px;
+}
+
+.service-intro {
+    color: var(--accent-text);
+    max-width: 68ch;
+}
+
+.service-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.service-item h2 {
+    margin-bottom: 0.45rem;
+}
+
+.service-item p {
+    margin-bottom: 0.6rem;
+}
+
+.benefit-title {
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+
+.benefit-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.service-quote {
+    color: var(--accent-text);
+    border-left: 3px solid var(--primary-accent);
+    padding-left: 0.75rem;
+    margin-top: 0.9rem;
+}
+
+.cta-strip {
+    margin-top: 1.2rem;
+}
+
+.included-title,
+.options-title,
+.materials-title {
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+
+.service-note {
+    color: var(--accent-text);
+}

@@ -20,6 +20,16 @@
         <priority>0.85</priority>
     </url>
 
+    <url>
+        <loc>https://elitedock.com/add-ons</loc>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://elitedock.com/dock-maintenance-repair</loc>
+        <priority>0.90</priority>
+    </url>
+
     <!-- Legal Pages -->
 
     <url>
