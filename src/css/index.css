@@ -3,7 +3,7 @@
 :root {
 	--page-max-width: 1140px;
 	--section-space: clamp(3.5rem, 7vw, 6rem);
-	--header-height: 5rem;
+	--header-height: 8rem;
 
 	--bg-primary: #ffffff;
 	--primary-accent: #4B6F82;
