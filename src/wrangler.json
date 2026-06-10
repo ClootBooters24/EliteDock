@@ -4,11 +4,5 @@
     "assets": {
         "directory": "./",
         "not_found_handling": "404-page"
-    },
-    "kv_namespaces": [
-        { "binding": "", "id": "" }
-    ],
-    "r2_buckets": [
-        { "binding": "", "bucket_name": "" }
-    ]
+    }
 }
