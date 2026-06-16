@@ -58,32 +58,68 @@
                     <p class="contact-note">Add social links, second email, or emergency response line here if needed.</p>
                 </article>
 
-                <form class="contact-form card" action="#" method="post" novalidate>
+                <form class="contact-form card" id="form" action="https://api.web3forms.com/submit" method="POST">
                     <h2>Project Form</h2>
 
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+                    <input type="hidden" name="access_key" value="e91b9da6-5ba3-4a9f-9adf-3370740d2f63">
+                    <input type="hidden" name="subject" value="New Project Inquiry from Elite Dock Contact Form">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <input type="hidden" name="from_name" value="Elite Dock Inquiry">
 
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    <fieldset>
+                        <legend>Personal Information</legend>
 
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required" aria-label="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required maxlength="50" autocomplete="given-name">
+                        </div>
 
-                    <label for="project-type">Project Type</label>
-                    <select id="project-type" name="projectType">
-                        <option value="">Select one</option>
-                        <option value="new-build">New Dock Build</option>
-                        <option value="repair">Repair / Remodel</option>
-                        <option value="lift">Boat or PWC Lift</option>
-                        <option value="maintenance">Maintenance Service</option>
-                        <option value="other">Other</option>
-                    </select>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required" aria-label="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required maxlength="50" autocomplete="family-name">
+                        </div>
 
-                    <label for="message">Project Details</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Tell us your location, dock condition, and target timing." required></textarea>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+                            <input type="email" id="email" name="email" required maxlength="100" autocomplete="email">
+                        </div>
 
-                    <button class="btn btn-primary" type="submit">Send Request</button>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" pattern="[0-9\-\(\)\s]+" maxlength="20" autocomplete="tel">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Project Details</legend>
+
+                        <div class="form-group">
+                            <label for="projectType">Project Type <span class="required" aria-label="required">*</span></label>
+                            <select id="projectType" name="projectType" required>
+                                <option value="">-- Select an option --</option>
+                                <option value="New Dock Build">New Dock Build</option>
+                                <option value="Repair or Remodel">Repair or Remodel</option>
+                                <option value="Boat or PWC Lift">Boat or PWC Lift</option>
+                                <option value="Maintenance Service">Maintenance Service</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquirySubject">Subject <span class="required" aria-label="required">*</span></label>
+                            <input type="text" id="inquirySubject" name="inquirySubject" required maxlength="100" placeholder="Brief subject of your inquiry">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required" aria-label="required">*</span></label>
+                            <textarea id="message" name="message" required maxlength="2000" placeholder="Tell us your location, dock condition, and target timing." rows="6"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Send Request</button>
+                        <button class="btn btn-secondary" type="reset">Clear Form</button>
+                    </div>
                 </form>
             </div>
         </section>

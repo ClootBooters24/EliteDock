@@ -28,6 +28,59 @@
     background: #ffffff;
 }
 
+.contact-form fieldset {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem;
+    margin: 0;
+}
+
+.contact-form legend {
+    font-weight: 600;
+    padding: 0 0.35rem;
+}
+
+.contact-form .form-group {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.contact-form .form-group + .form-group {
+    margin-top: 0.75rem;
+}
+
+.contact-form .required {
+    color: #9b1c1c;
+}
+
+.contact-form .optional {
+    color: var(--accent-text);
+    font-size: 0.92rem;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 0.25rem;
+}
+
+.btn-secondary {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text);
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
 @media (min-width: 880px) {
     .contact-layout {
         grid-template-columns: 0.95fr 1.25fr;
