@@ -13,8 +13,8 @@
 	align-items: center;
 }
 
-.footer-links {
-	text-align: center;
+.footer-inner p {
+	margin: 0;
 }
 
 .legal-links {
@@ -36,15 +36,6 @@
 
 .legal-links a:hover {
 	border-bottom-color: var(--bg-primary);
-}
-
-.footer-bottom {
-	text-align: center;
-	margin-top: 1rem;
-}
-
-.footer-bottom p {
-	margin: 0.5rem 0;
 }
 
 .creator-note a {

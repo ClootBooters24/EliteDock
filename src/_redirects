@@ -6,9 +6,17 @@
 /dock-maintenance-repair.html /dock-maintenance-repair 301
 /dredging.html         /dredging           301
 
-/privacy-policy.html   /privacy-policy     301
-/terms-of-service.html /terms-of-service   301
-/accessibility.html    /accessibility      301
+/privacy-policy.html   /legal/privacy-policy 301
+/privacy-policy        /legal/privacy-policy 301
+/legal/privacy-policy.html /legal/privacy-policy 301
+/terms-of-use.html     /legal/terms-of-use 301
+/terms-of-use          /legal/terms-of-use 301
+/terms-of-service.html /legal/terms-of-use 301
+/terms-of-service      /legal/terms-of-use 301
+/legal/terms-of-use.html /legal/terms-of-use 301
+/accessibility.html    /legal/accessibility 301
+/accessibility         /legal/accessibility 301
+/legal/accessibility.html /legal/accessibility 301
 
 /404.html               /404                301
 
