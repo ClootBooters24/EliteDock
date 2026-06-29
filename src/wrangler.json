@@ -4,5 +4,8 @@
     "assets": {
         "directory": "./",
         "not_found_handling": "404-page"
-    }
+    },
+    "r2_buckets": [
+        { "binding": "elitedock-assets", "bucket_name": "elitedock-assets" }
+    ]
 }
