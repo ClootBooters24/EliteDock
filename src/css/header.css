@@ -88,10 +88,19 @@
 	color: var(--primary-text);
 	font-family: var(--font-body);
 	font-weight: 500;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+	background: rgba(36, 95, 122, 0.12);
 }
 
 .site-nav a.active {
 	background: rgba(36, 95, 122, 0.15);
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 0.2em;
 }
 
 .site-nav .btn-nav {
@@ -125,8 +134,16 @@
 		color: var(--bg-primary);
 	}
 
+	.site-nav a:hover,
+	.site-nav a:focus-visible {
+		background: rgba(255, 255, 255, 0.12);
+	}
+
 	.site-nav a.active {
 		background: rgba(255, 255, 255, 0.16);
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.2em;
 	}
 
 	.site-nav .btn-nav {
