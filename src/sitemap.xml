@@ -4,12 +4,6 @@
         <loc>https://elitedock.com/</loc>
         <priority>1.00</priority>
     </url>
-
-    <url>
-        <loc>https://elitedock.com/about</loc>
-        <priority>0.80</priority>
-    </url>
-
     <url>
         <loc>https://elitedock.com/contact</loc>
         <priority>0.90</priority>
@@ -28,6 +22,11 @@
     <url>
         <loc>https://elitedock.com/dock-maintenance-repair</loc>
         <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://elitedock.com/dredging</loc>
+        <priority>0.85</priority>
     </url>
 
     <!-- Legal Pages -->

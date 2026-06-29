@@ -50,11 +50,9 @@
 </head>
 
 <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
     <header class="site-header" id="top">
         <div class="shell header-inner">
-            <a class="brand" href="#top" aria-label="Elite Dock home">
+            <a class="brand" href="/" aria-label="Elite Dock home">
                 <img class="brand-logo" src="https://pub-a97b7512c49d48e092d7a4bb3e4ca00f.r2.dev/logos/EliteDockLogo_Black.webp" alt="Elite Dock" width="240" height="72" loading="eager" decoding="async">
             </a>
 
@@ -65,9 +63,9 @@
             <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
                 <a href="/">Home</a>
                 <a href="/gallery">Gallery</a>
-                <a href="/about">About</a>
                 <a href="/add-ons">Add-Ons</a>
                 <a href="/dock-maintenance-repair">Maintenance</a>
+                <a href="/dredging">Dredging</a>
                 <a href="/contact" class="btn btn-nav">Contact</a>
             </nav>
         </div>
@@ -84,8 +82,19 @@
                         <a href="/contact" class="btn btn-primary">Get a Quote</a>
                     </div>
                 </div>
-                <div class="hero-media" aria-hidden="true">
-                    <div class="media-placeholder">Replace with dock image or video</div>
+                <div class="hero-media" data-hero-slider aria-label="Completed dock projects">
+                    <div class="hero-media-track" data-hero-track>
+                        <img class="hero-slide is-active" src="https://pub-a97b7512c49d48e092d7a4bb3e4ca00f.r2.dev/Completed%20Docks/IMG_1661.webp" alt="Completed dock project" loading="eager" decoding="async">
+                        <img class="hero-slide" src="https://pub-a97b7512c49d48e092d7a4bb3e4ca00f.r2.dev/Completed%20Docks/IMG_2773.webp" alt="Completed dock project" loading="lazy" decoding="async">
+                        <img class="hero-slide" src="https://pub-a97b7512c49d48e092d7a4bb3e4ca00f.r2.dev/Completed%20Docks/IMG_3171.webp" alt="Completed dock project" loading="lazy" decoding="async">
+                    </div>
+                    <button class="hero-slider-control hero-slider-prev" type="button" data-hero-prev aria-label="Previous image">&#10094;</button>
+                    <button class="hero-slider-control hero-slider-next" type="button" data-hero-next aria-label="Next image">&#10095;</button>
+                    <div class="hero-slider-dots" aria-label="Choose image">
+                        <button class="hero-dot is-active" type="button" data-hero-dot="0" aria-label="Show image 1"></button>
+                        <button class="hero-dot" type="button" data-hero-dot="1" aria-label="Show image 2"></button>
+                        <button class="hero-dot" type="button" data-hero-dot="2" aria-label="Show image 3"></button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -108,9 +117,9 @@
                         <p><a href="/dock-maintenance-repair">View Maintenance Services</a></p>
                     </article>
                     <article class="card service-card">
-                        <h3>Custom Expansion Projects</h3>
-                        <p>Need more slips, better access, upgraded decking, or improved wave protection? We design around your shoreline and how you use your dock.</p>
-                        <p><a href="/contact">Request a Quote</a></p>
+                        <h3>Dock and Slip Dredging</h3>
+                        <p>Restore depth and improve access around your dock. We help remove built-up sediment so your waterfront stays usable and safer for boats.</p>
+                        <p><a href="/dredging">View Dredging Services</a></p>
                     </article>
                 </div>
             </div>
@@ -204,42 +213,16 @@
                     </details>
                     <details class="faq-item">
                         <summary>Do you help with permits and inspections?</summary>
-                        <p>Insert your process around local requirements and client coordination.</p>
+                        <p>Yes. We can point you in the right direction for permits and inspection requirements, but we do not pull permits or file paperwork on your behalf.</p>
                     </details>
                     <details class="faq-item">
                         <summary>What areas do you service?</summary>
-                        <p>Insert city, county, or shoreline regions where work is available.</p>
+                        <p>We currently service Grand Lake only.</p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <section class="section contact" id="contact" aria-labelledby="contact-title">
-            <div class="shell split">
-                <div>
-                    <p class="eyebrow">Get Started</p>
-                    <h2 id="contact-title">Tell us about your dock project.</h2>
-                    <p>Keep this as placeholder until your final intake flow is ready. You can replace this with embedded forms, KV-backed request tracking, or outbound email automation later.</p>
-                    <ul class="contact-list">
-                        <li><strong>Phone:</strong> <a href="tel:+10000000000">(000) 000-0000</a></li>
-                        <li><strong>Email:</strong> <a href="mailto:info@elitedock.com">info@elitedock.com</a></li>
-                        <li><strong>Service Area:</strong> Regional shoreline coverage</li>
-                    </ul>
-                </div>
-                <form class="contact-form card" action="#" method="post" novalidate>
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name">
-
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
-
-                    <label for="message">Project Details</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell us about location, timing, and scope."></textarea>
-
-                    <button class="btn btn-primary" type="submit">Send Request</button>
-                </form>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">
@@ -253,7 +236,7 @@
                 </ul>
             </div>
             <div class="footer-bottom">
-                <p>Copyright <span id="copyright-year"></span> Elite Dock. All rights reserved.</p>
+                <p>&copy; <span id="copyright-year"></span> Elite Dock. All rights reserved.</p>
                 <p class="creator-note">
                     <a href="https://warstlerdigital.com" target="_blank" rel="noopener">Built by Warstler Digital Design</a>
                 </p>

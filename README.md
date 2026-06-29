@@ -9,7 +9,6 @@ Scaffolded static marketing site for elitedock.com, prepared for iterative conte
 	- Services
 	- Projects
 	- Process
-	- About
 	- FAQ
 	- Contact
 - Mobile-ready header/navigation behavior in JavaScript

@@ -8,6 +8,7 @@
 }
 
 .header-inner {
+	position: relative;
 	min-height: var(--header-height);
 	display: flex;
 	align-items: center;
@@ -53,9 +54,10 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid var(--line);
+	border: 1px solid rgba(255, 255, 255, 0.75);
 	border-radius: 999px;
-	background: transparent;
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--bg-primary);
 	padding: 0.45rem 0.75rem;
 	font: inherit;
 	cursor: pointer;
@@ -64,9 +66,9 @@
 .site-nav {
 	position: absolute;
 	top: calc(100% + 0.35rem);
-	right: 1rem;
-	left: 1rem;
-	background: var(--surface);
+	right: 0;
+	left: 0;
+	background: var(--bg-primary);
 	border: 1px solid var(--line);
 	border-radius: var(--radius-md);
 	box-shadow: var(--shadow-card);
@@ -83,7 +85,7 @@
 	text-decoration: none;
 	padding: 0.55rem 0.7rem;
 	border-radius: var(--radius-sm);
-	color: var(--bg-primary);
+	color: var(--primary-text);
 	font-family: var(--font-body);
 	font-weight: 500;
 }
@@ -95,6 +97,7 @@
 .site-nav .btn-nav {
 	margin-top: 0.2rem;
 	text-align: center;
+	border-color: var(--line);
 }
 
 @media (min-width: 900px) {
@@ -116,6 +119,18 @@
 		background: transparent;
 		padding: 0;
 		gap: 0.1rem;
+	}
+
+	.site-nav a {
+		color: var(--bg-primary);
+	}
+
+	.site-nav a.active {
+		background: rgba(255, 255, 255, 0.16);
+	}
+
+	.site-nav .btn-nav {
+		border-color: rgba(255, 255, 255, 0.85);
 	}
 
 	.site-nav .btn-nav {

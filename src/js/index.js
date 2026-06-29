@@ -5,7 +5,8 @@ if (yearEl) {
 
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
-const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+const navMenuLinks = document.querySelectorAll(".site-nav a");
+const sectionNavLinks = document.querySelectorAll('.site-nav a[href^="#"]');
 
 if (menuToggle && nav) {
 	menuToggle.addEventListener("click", () => {
@@ -14,17 +15,36 @@ if (menuToggle && nav) {
 		nav.classList.toggle("is-open");
 	});
 
-	navLinks.forEach((link) => {
+	navMenuLinks.forEach((link) => {
 		link.addEventListener("click", () => {
 			menuToggle.setAttribute("aria-expanded", "false");
 			nav.classList.remove("is-open");
 		});
 	});
+
+	document.addEventListener("click", (event) => {
+		const target = event.target;
+		if (!(target instanceof Element)) {
+			return;
+		}
+
+		if (!nav.contains(target) && !menuToggle.contains(target)) {
+			menuToggle.setAttribute("aria-expanded", "false");
+			nav.classList.remove("is-open");
+		}
+	});
+
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape") {
+			menuToggle.setAttribute("aria-expanded", "false");
+			nav.classList.remove("is-open");
+		}
+	});
 }
 
 const observedSections = document.querySelectorAll("main section[id]");
 
-if (observedSections.length && navLinks.length) {
+if (observedSections.length && sectionNavLinks.length) {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
@@ -32,7 +52,7 @@ if (observedSections.length && navLinks.length) {
 					return;
 				}
 
-				navLinks.forEach((link) => {
+				sectionNavLinks.forEach((link) => {
 					const targetId = link.getAttribute("href")?.replace("#", "");
 					const isMatch = targetId === entry.target.id;
 					link.classList.toggle("active", Boolean(isMatch));
@@ -48,13 +68,117 @@ if (observedSections.length && navLinks.length) {
 	observedSections.forEach((section) => observer.observe(section));
 }
 
-// Placeholder form handling until backend submit endpoint is connected.
-const contactForm = document.querySelector(".contact-form");
+const heroSlider = document.querySelector("[data-hero-slider]");
 
-if (contactForm) {
-	contactForm.addEventListener("submit", (event) => {
-		event.preventDefault();
-		window.alert("Form endpoint not connected yet. Replace this handler when backend is ready.");
+if (heroSlider) {
+	const slides = Array.from(heroSlider.querySelectorAll(".hero-slide"));
+	const dots = Array.from(heroSlider.querySelectorAll("[data-hero-dot]"));
+	const prevButton = heroSlider.querySelector("[data-hero-prev]");
+	const nextButton = heroSlider.querySelector("[data-hero-next]");
+	let currentIndex = 0;
+	let autoRotateId;
+	let touchStartX = 0;
+	let touchCurrentX = 0;
+	let isSwiping = false;
+
+	const setSlide = (index) => {
+		currentIndex = (index + slides.length) % slides.length;
+
+		slides.forEach((slide, slideIndex) => {
+			slide.classList.toggle("is-active", slideIndex === currentIndex);
+		});
+
+		dots.forEach((dot, dotIndex) => {
+			dot.classList.toggle("is-active", dotIndex === currentIndex);
+		});
+	};
+
+	const restartAutoRotate = () => {
+		if (autoRotateId) {
+			window.clearInterval(autoRotateId);
+		}
+		autoRotateId = window.setInterval(() => {
+			setSlide(currentIndex + 1);
+		}, 5000);
+	};
+
+	if (prevButton) {
+		prevButton.addEventListener("click", () => {
+			setSlide(currentIndex - 1);
+			restartAutoRotate();
+		});
+	}
+
+	if (nextButton) {
+		nextButton.addEventListener("click", () => {
+			setSlide(currentIndex + 1);
+			restartAutoRotate();
+		});
+	}
+
+	dots.forEach((dot) => {
+		dot.addEventListener("click", () => {
+			const targetIndex = Number(dot.getAttribute("data-hero-dot"));
+			if (!Number.isNaN(targetIndex)) {
+				setSlide(targetIndex);
+				restartAutoRotate();
+			}
+		});
 	});
+
+	heroSlider.addEventListener("mouseenter", () => {
+		if (autoRotateId) {
+			window.clearInterval(autoRotateId);
+		}
+	});
+
+	heroSlider.addEventListener("mouseleave", restartAutoRotate);
+
+	heroSlider.addEventListener("touchstart", (event) => {
+		const touch = event.touches[0];
+		if (!touch) {
+			return;
+		}
+		touchStartX = touch.clientX;
+		touchCurrentX = touch.clientX;
+		isSwiping = true;
+		if (autoRotateId) {
+			window.clearInterval(autoRotateId);
+		}
+	}, { passive: true });
+
+	heroSlider.addEventListener("touchmove", (event) => {
+		if (!isSwiping) {
+			return;
+		}
+		const touch = event.touches[0];
+		if (!touch) {
+			return;
+		}
+		touchCurrentX = touch.clientX;
+	}, { passive: true });
+
+	heroSlider.addEventListener("touchend", () => {
+		if (!isSwiping) {
+			return;
+		}
+
+		const swipeDistance = touchCurrentX - touchStartX;
+		const swipeThreshold = 40;
+
+		if (Math.abs(swipeDistance) >= swipeThreshold) {
+			if (swipeDistance < 0) {
+				setSlide(currentIndex + 1);
+			} else {
+				setSlide(currentIndex - 1);
+			}
+		}
+
+		isSwiping = false;
+		restartAutoRotate();
+	});
+
+	setSlide(0);
+	restartAutoRotate();
 }
 
