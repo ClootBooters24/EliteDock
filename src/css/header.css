@@ -97,10 +97,9 @@
 }
 
 .site-nav a.active {
-	background: rgba(36, 95, 122, 0.15);
-	text-decoration: underline;
-	text-decoration-thickness: 2px;
-	text-underline-offset: 0.2em;
+	background: rgba(36, 95, 122, 0.18);
+	font-weight: 700;
+	box-shadow: inset 0 0 0 1px rgba(36, 95, 122, 0.35);
 }
 
 .site-nav .btn-nav {
@@ -140,10 +139,9 @@
 	}
 
 	.site-nav a.active {
-		background: rgba(255, 255, 255, 0.16);
-		text-decoration: underline;
-		text-decoration-thickness: 2px;
-		text-underline-offset: 0.2em;
+		background: rgba(255, 255, 255, 0.22);
+		font-weight: 700;
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
 	}
 
 	.site-nav .btn-nav {
