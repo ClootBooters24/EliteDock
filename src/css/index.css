@@ -220,11 +220,28 @@ h3, h4, h5, h6 {
 .btn-primary {
 	background: var(--primary-accent);
 	color: var(--bg-primary);
+	transition: all 200ms ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+	background: var(--secondary-accent);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(75, 111, 130, 0.25);
 }
 
 .btn-secondary {
 	background: transparent;
 	border-color: var(--line);
+	color: var(--primary-text);
+	transition: all 200ms ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+	border-color: var(--primary-accent);
+	background: rgba(75, 111, 130, 0.05);
+	color: var(--primary-accent);
 }
 
 .card-grid {
@@ -240,11 +257,30 @@ h3, h4, h5, h6 {
 	box-shadow: var(--shadow-card);
 }
 
+.card a {
+	color: var(--primary-accent);
+	text-decoration: none;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	transition: all 200ms ease;
+}
+
+.card a:hover,
+.card a:focus-visible {
+	color: var(--secondary-accent);
+	text-decoration: underline;
+}
+
 .project-tag {
 	font-size: 0.8rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
 	color: var(--accent-text);
+}
+
+.services {
+	padding-top: 1.5rem;
 }
 
 .process-steps {
