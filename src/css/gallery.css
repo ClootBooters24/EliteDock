@@ -78,12 +78,12 @@
 
 .tiktok-frame-wrap {
     width: min(100%, 420px);
-    aspect-ratio: 9 / 16;
     border-radius: var(--radius-md);
     overflow: hidden;
     border: 1px solid var(--line);
     background: #ffffff;
     box-shadow: 0 10px 24px rgba(20, 41, 56, 0.13);
+    padding: 0.75rem;
 }
 
 .tiktok-frame-wrap .tiktok-embed {
@@ -91,7 +91,6 @@
     width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
-    height: 100%;
 }
 
 .tiktok-card .btn {

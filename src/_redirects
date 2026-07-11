@@ -3,7 +3,9 @@
 /contact.html          /contact            301
 /gallery.html          /gallery            301
 /add-ons.html          /add-ons            301
-/dock-maintenance-repair.html /dock-maintenance-repair 301
+/maintenance.html      /maintenance        301
+/dock-maintenance-repair.html /maintenance 301
+/dock-maintenance-repair /maintenance      301
 /dredging.html         /dredging           301
 
 /privacy-policy.html   /legal/privacy-policy 301
