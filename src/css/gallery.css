@@ -33,10 +33,6 @@
     display: block;
 }
 
-.gallery-img-rotate {
-    transform: rotate(90deg) scale(1.5);
-}
-
 .gallery-media {
     min-height: 200px;
     display: grid;
