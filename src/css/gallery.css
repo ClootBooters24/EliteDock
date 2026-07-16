@@ -6,6 +6,10 @@
     padding-bottom: 1.5rem;
 }
 
+.gallery-showcase {
+    padding-top: 1rem;
+}
+
 .gallery-grid {
     display: grid;
     gap: 1rem;
