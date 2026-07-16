@@ -94,6 +94,8 @@
 .btn-secondary:focus-visible {
     border-color: var(--primary-accent);
     color: var(--primary-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(75, 111, 130, 0.15);
 }
 
 .social-links {

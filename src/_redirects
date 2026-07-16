@@ -2,7 +2,10 @@
 /index.html            /                   301
 /contact.html          /contact            301
 /gallery.html          /gallery            301
-/add-ons.html          /add-ons            301
+/add-ons.html          /lifts              301
+/add-ons               /lifts              301
+/lifts.html            /lifts              301
+/accessories.html      /accessories        301
 /maintenance.html      /maintenance        301
 /dock-maintenance-repair.html /maintenance 301
 /dock-maintenance-repair /maintenance      301

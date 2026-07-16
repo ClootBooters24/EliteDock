@@ -242,6 +242,8 @@ h3, h4, h5, h6 {
 	border-color: var(--primary-accent);
 	background: rgba(75, 111, 130, 0.05);
 	color: var(--primary-accent);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(75, 111, 130, 0.15);
 }
 
 .card-grid {
@@ -372,6 +374,10 @@ h3, h4, h5, h6 {
 	.hero-grid,
 	.split {
 		grid-template-columns: 1.2fr 1fr;
+	}
+
+	.card-grid-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
 	.card-grid-3 {
