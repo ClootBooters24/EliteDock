@@ -9,6 +9,7 @@
 .gallery-grid {
     display: grid;
     gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .gallery-item {
@@ -18,6 +19,22 @@
     background: var(--surface);
     overflow: hidden;
     box-shadow: var(--shadow-card);
+}
+
+.gallery-img-wrap {
+    overflow: hidden;
+    height: 220px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-img-rotate {
+    transform: rotate(90deg) scale(1.5);
 }
 
 .gallery-media {
