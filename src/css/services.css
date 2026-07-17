@@ -51,7 +51,7 @@
     place-items: center;
     border-radius: var(--radius-md);
     overflow: hidden;
-    border: 1px solid var(--line);
+    
     box-shadow: var(--shadow-card);
     background: #f3f7f8;
 }
