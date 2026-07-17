@@ -6,11 +6,14 @@
 	--header-height: 8rem;
 
 	--bg-primary: #ffffff;
+	--surface: #ffffff;
 	--primary-accent: #4B6F82;
 	--primary-text: #000000;
 	--accent-text: #365d67;
 	--secondary-accent: #66B5D3;
 	--line: #365d67;
+	--card-border-start: #456781;
+	--card-border-end: #77afc9;
 	--radius-sm: 0.5rem;
 	--radius-md: 0.9rem;
 	--shadow-card: 0 10px 30px rgba(20, 41, 56, 0.08);
@@ -120,7 +123,7 @@ h3, h4, h5, h6 {
 	height: 360px;
 	border-radius: var(--radius-md);
 	overflow: hidden;
-	border: 1px solid var(--line);
+	border: 2px linear-gradient(90deg, var(--primary-accent), var(--secondary-accent)) 1;
 	box-shadow: var(--shadow-card);
 }
 
@@ -252,11 +255,22 @@ h3, h4, h5, h6 {
 }
 
 .card {
-	background: var(--surface);
-	border: 1px solid var(--line);
-	border-radius: var(--radius-md);
-	padding: 1.2rem;
-	box-shadow: var(--shadow-card);
+	position: relative;
+	border-radius: 1.25rem;
+	padding: 1.3rem;
+	background: linear-gradient(var(--surface), var(--surface)) padding-box,
+		linear-gradient(90deg, var(--card-border-start), var(--card-border-end)) border-box;
+	background-origin: padding-box, border-box;
+	background-clip: padding-box, border-box;
+	border: 2px solid transparent;
+	box-shadow: 0 18px 40px rgba(33, 75, 103, 0.11);
+	transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+	transform: translateY(-4px);
+	box-shadow: 0 24px 54px rgba(33, 75, 103, 0.16);
 }
 
 .card a:not(.btn) {
@@ -285,7 +299,7 @@ h3, h4, h5, h6 {
 	position: relative;
 	height: 220px;
 	overflow: hidden;
-	border: 1px solid var(--line);
+	border: 2px solid transparent;
 	border-radius: var(--radius-sm);
 	margin-bottom: 0.9rem;
 	background: #f7fbfc;
@@ -296,6 +310,7 @@ h3, h4, h5, h6 {
 	height: 100%;
 	object-fit: cover;
 	display: block;
+
 }
 
 .project-image-rotate {

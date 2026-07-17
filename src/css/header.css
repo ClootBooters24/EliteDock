@@ -3,7 +3,7 @@
 	inset: 0 0 auto;
 	z-index: 100;
 	background: var(--primary-accent);
-	border-bottom: 1px solid rgba(26, 36, 48, 0.08);
+	border-bottom: 2px linear-gradient(90deg, var(--primary-accent), var(--secondary-accent)) 1;
 	backdrop-filter: blur(8px);
 }
 
