@@ -35,7 +35,6 @@
 }
 
 .gallery-img-wrap {
-    border-radius: inherit;
     overflow: hidden;
     height: 220px;
 }
@@ -43,7 +42,6 @@
 .gallery-img {
     width: 100%;
     height: 220px;
-    border-radius: inherit;
     object-fit: cover;
     display: block;
 }
