@@ -305,6 +305,19 @@ h3, h4, h5, h6 {
 	color: var(--accent-text);
 }
 
+.project-card-link {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+	height: 100%;
+}
+
+.card .project-card-link:hover,
+.card .project-card-link:focus-visible {
+	color: inherit;
+	text-decoration: none;
+}
+
 .project-image-wrap {
 	position: relative;
 	height: 220px;
