@@ -305,15 +305,17 @@ h3, h4, h5, h6 {
 	color: var(--accent-text);
 }
 
-.card .project-card-link {
+.card a.project-card-link {
 	display: block;
+	width: 100%;
 	color: inherit;
 	text-decoration: none;
 	height: 100%;
+	font-weight: 400;
 }
 
-.card .project-card-link:hover,
-.card .project-card-link:focus-visible {
+.card a.project-card-link:hover,
+.card a.project-card-link:focus-visible {
 	color: inherit;
 	text-decoration: none;
 }
