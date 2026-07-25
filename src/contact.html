@@ -110,7 +110,7 @@
                     </div>
                 </article>
 
-                <form class="contact-form card" id="form" action="https://api.web3forms.com/submit" method="POST">
+                <form class="contact-form card" id="form" action="https://api.web3forms.com/submit" method="POST" data-contact-form>
                     <h2>Project Form</h2>
 
                     <input type="hidden" name="access_key" value="e91b9da6-5ba3-4a9f-9adf-3370740d2f63">
@@ -196,6 +196,14 @@
                         <button class="btn btn-secondary" type="reset">Clear Form</button>
                     </div>
                 </form>
+
+                <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" aria-hidden="true" data-contact-modal>
+                    <div class="contact-modal-panel" role="document">
+                        <h2 id="contact-modal-title">Thank you!</h2>
+                        <p id="contact-modal-message">Your request has been sent. We will be in touch soon.</p>
+                        <button class="btn btn-primary" type="button" data-contact-modal-close>Close</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
