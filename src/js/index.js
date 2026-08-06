@@ -145,7 +145,6 @@ if (heroSlider) {
 	const prevButton = heroSlider.querySelector("[data-hero-prev]");
 	const nextButton = heroSlider.querySelector("[data-hero-next]");
 	let currentIndex = 0;
-	let autoRotateId;
 	let touchStartX = 0;
 	let touchCurrentX = 0;
 	let isSwiping = false;
@@ -166,26 +165,15 @@ if (heroSlider) {
 		});
 	};
 
-	const restartAutoRotate = () => {
-		if (autoRotateId) {
-			window.clearInterval(autoRotateId);
-		}
-		autoRotateId = window.setInterval(() => {
-			setSlide(currentIndex + 1);
-		}, 5000);
-	};
-
 	if (prevButton) {
 		prevButton.addEventListener("click", () => {
 			setSlide(currentIndex - 1);
-			restartAutoRotate();
 		});
 	}
 
 	if (nextButton) {
 		nextButton.addEventListener("click", () => {
 			setSlide(currentIndex + 1);
-			restartAutoRotate();
 		});
 	}
 
@@ -194,18 +182,9 @@ if (heroSlider) {
 			const targetIndex = Number(dot.getAttribute("data-hero-dot"));
 			if (!Number.isNaN(targetIndex)) {
 				setSlide(targetIndex);
-				restartAutoRotate();
 			}
 		});
 	});
-
-	heroSlider.addEventListener("mouseenter", () => {
-		if (autoRotateId) {
-			window.clearInterval(autoRotateId);
-		}
-	});
-
-	heroSlider.addEventListener("mouseleave", restartAutoRotate);
 
 	heroSlider.addEventListener("touchstart", (event) => {
 		const touch = event.touches[0];
@@ -215,9 +194,6 @@ if (heroSlider) {
 		touchStartX = touch.clientX;
 		touchCurrentX = touch.clientX;
 		isSwiping = true;
-		if (autoRotateId) {
-			window.clearInterval(autoRotateId);
-		}
 	}, { passive: true });
 
 	heroSlider.addEventListener("touchmove", (event) => {
@@ -248,10 +224,8 @@ if (heroSlider) {
 		}
 
 		isSwiping = false;
-		restartAutoRotate();
 	});
 
 	setSlide(0);
-	restartAutoRotate();
 }
 
