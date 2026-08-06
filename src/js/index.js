@@ -3,6 +3,36 @@ if (yearEl) {
 	yearEl.textContent = String(new Date().getFullYear());
 }
 
+const analyticsId = "G-7KDT5218R0";
+
+const initializeAnalytics = () => {
+	if (typeof window.gtag === "function") {
+		return;
+	}
+
+	window.dataLayer = window.dataLayer || [];
+	window.gtag = function gtag() {
+		window.dataLayer.push(arguments);
+	};
+
+	window.gtag("js", new Date());
+	window.gtag("config", analyticsId);
+
+	const analyticsScript = document.createElement("script");
+	analyticsScript.async = true;
+	analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
+	document.head.appendChild(analyticsScript);
+};
+
+window.addEventListener("load", () => {
+	if ("requestIdleCallback" in window) {
+		window.requestIdleCallback(initializeAnalytics, { timeout: 2500 });
+		return;
+	}
+
+	window.setTimeout(initializeAnalytics, 1500);
+});
+
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
 const navMenuLinks = document.querySelectorAll(".site-nav a");
