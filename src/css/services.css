@@ -42,6 +42,12 @@
 .service-item {
     display: grid;
     gap: 1rem;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px;
+}
+
+.service-list .service-item:first-of-type {
+    content-visibility: visible;
 }
 
 .service-media {
