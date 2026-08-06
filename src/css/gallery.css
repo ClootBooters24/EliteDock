@@ -119,6 +119,20 @@
     min-width: 0 !important;
 }
 
+.tiktok-placeholder {
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.tiktok-placeholder p {
+    margin: 0;
+    color: var(--accent-text);
+}
+
 .tiktok-card .btn {
     transition: transform 180ms ease, box-shadow 180ms ease;
 }
