@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Geared+Slab:wght@400;700&family=Montserrat:wght@400;500;700&display=swap');
-
 :root {
 	--page-max-width: 1140px;
 	--section-space: clamp(3.5rem, 7vw, 6rem);
@@ -7,11 +5,11 @@
 
 	--bg-primary: #ffffff;
 	--surface: #ffffff;
-	--primary-accent: #4B6F82;
+	--primary-accent: #264f64;
 	--primary-text: #000000;
-	--accent-text: #365d67;
+	--accent-text: #1f4353;
 	--secondary-accent: #66B5D3;
-	--line: #365d67;
+	--line: #2d5568;
 	--card-border-start: #456781;
 	--card-border-end: #77afc9;
 	--radius-sm: 0.5rem;
@@ -19,8 +17,8 @@
 	--shadow-card: 0 10px 30px rgba(20, 41, 56, 0.08);
 
 	/* Fonts */
-	--font-heading: 'Geared Slab', serif;
-	--font-body: 'Montserrat', sans-serif;
+	--font-heading: Cambria, Georgia, "Times New Roman", serif;
+	--font-body: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -167,8 +165,8 @@ h3, h4, h5, h6 {
 	color: #ffffff;
 	border: 0;
 	border-radius: 999px;
-	width: 2.2rem;
-	height: 2.2rem;
+	width: 2.75rem;
+	height: 2.75rem;
 	display: grid;
 	place-items: center;
 	cursor: pointer;
@@ -194,15 +192,31 @@ h3, h4, h5, h6 {
 }
 
 .hero-dot {
-	width: 0.65rem;
-	height: 0.65rem;
+	width: 2rem;
+	height: 2rem;
 	border-radius: 999px;
 	border: 1px solid rgba(255, 255, 255, 0.65);
-	background: rgba(255, 255, 255, 0.25);
+	background: transparent;
 	cursor: pointer;
+	position: relative;
+}
+
+.hero-dot::before {
+	content: "";
+	position: absolute;
+	inset: 50% auto auto 50%;
+	width: 0.65rem;
+	height: 0.65rem;
+	transform: translate(-50%, -50%);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.25);
 }
 
 .hero-dot.is-active {
+	background: transparent;
+}
+
+.hero-dot.is-active::before {
 	background: #ffffff;
 }
 

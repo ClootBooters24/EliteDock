@@ -68,6 +68,45 @@ if (observedSections.length && sectionNavLinks.length) {
 	observedSections.forEach((section) => observer.observe(section));
 }
 
+const lazyImages = document.querySelectorAll("img[data-src]");
+
+if (lazyImages.length) {
+	const hydrateImage = (img) => {
+		const source = img.getAttribute("data-src");
+		if (!source) {
+			return;
+		}
+
+		img.src = source;
+		img.removeAttribute("data-src");
+	};
+
+	if (!("IntersectionObserver" in window)) {
+		lazyImages.forEach((img) => hydrateImage(img));
+	} else {
+		const imageObserver = new IntersectionObserver(
+			(entries, obs) => {
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) {
+						return;
+					}
+
+					const target = entry.target;
+					if (target instanceof HTMLImageElement) {
+						hydrateImage(target);
+					}
+					obs.unobserve(target);
+				});
+			},
+			{
+				rootMargin: "150px 0px"
+			}
+		);
+
+		lazyImages.forEach((img) => imageObserver.observe(img));
+	}
+}
+
 const heroSlider = document.querySelector("[data-hero-slider]");
 
 if (heroSlider) {
@@ -85,6 +124,10 @@ if (heroSlider) {
 		currentIndex = (index + slides.length) % slides.length;
 
 		slides.forEach((slide, slideIndex) => {
+			if (slideIndex === currentIndex && slide.dataset.src) {
+				slide.src = slide.dataset.src;
+				slide.removeAttribute("data-src");
+			}
 			slide.classList.toggle("is-active", slideIndex === currentIndex);
 		});
 
@@ -180,81 +223,5 @@ if (heroSlider) {
 
 	setSlide(0);
 	restartAutoRotate();
-}
-
-const contactForm = document.querySelector("[data-contact-form]");
-const contactModal = document.querySelector("[data-contact-modal]");
-const contactModalMessage = document.getElementById("contact-modal-message");
-const contactModalCloseButton = document.querySelector("[data-contact-modal-close]");
-
-if (contactForm instanceof HTMLFormElement && contactModal instanceof HTMLElement) {
-	const openContactModal = (message) => {
-		if (contactModalMessage) {
-			contactModalMessage.textContent = message;
-		}
-
-		contactModal.classList.add("is-open");
-		contactModal.setAttribute("aria-hidden", "false");
-		if (contactModalCloseButton instanceof HTMLButtonElement) {
-			contactModalCloseButton.focus();
-		}
-	};
-
-	const closeContactModal = () => {
-		contactModal.classList.remove("is-open");
-		contactModal.setAttribute("aria-hidden", "true");
-	};
-
-	const submitButton = contactForm.querySelector("button[type='submit']");
-
-	contactForm.addEventListener("submit", async (event) => {
-		event.preventDefault();
-
-		if (submitButton instanceof HTMLButtonElement) {
-			submitButton.disabled = true;
-			submitButton.textContent = "Sending...";
-		}
-
-		try {
-			const formData = new FormData(contactForm);
-			const response = await fetch(contactForm.action, {
-				method: "POST",
-				body: formData,
-				headers: {
-					Accept: "application/json"
-				}
-			});
-
-			if (!response.ok) {
-				throw new Error("Unable to send form.");
-			}
-
-			contactForm.reset();
-			openContactModal("Thank you. Your request has been sent and we will reach out soon.");
-		} catch (error) {
-			openContactModal("We could not send your request right now. Please call us at (918) 786-0553.");
-		} finally {
-			if (submitButton instanceof HTMLButtonElement) {
-				submitButton.disabled = false;
-				submitButton.textContent = "Send Request";
-			}
-		}
-	});
-
-	if (contactModalCloseButton instanceof HTMLButtonElement) {
-		contactModalCloseButton.addEventListener("click", closeContactModal);
-	}
-
-	contactModal.addEventListener("click", (event) => {
-		if (event.target === contactModal) {
-			closeContactModal();
-		}
-	});
-
-	document.addEventListener("keydown", (event) => {
-		if (event.key === "Escape" && contactModal.classList.contains("is-open")) {
-			closeContactModal();
-		}
-	});
 }
 
