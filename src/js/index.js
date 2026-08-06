@@ -98,7 +98,7 @@ if (observedSections.length && sectionNavLinks.length) {
 	observedSections.forEach((section) => observer.observe(section));
 }
 
-const lazyImages = document.querySelectorAll("img[data-src]");
+const lazyImages = document.querySelectorAll("img[data-src]:not(.hero-slide)");
 
 if (lazyImages.length) {
 	const hydrateImage = (img) => {
