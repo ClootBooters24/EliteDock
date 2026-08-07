@@ -6,6 +6,10 @@
     padding-bottom: 1rem;
 }
 
+.legal-page .legal-hero + .section {
+    padding-top: 1rem;
+}
+
 .legal-shell {
     max-width: 900px;
 }
